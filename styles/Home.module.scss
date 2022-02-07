@@ -1,0 +1,290 @@
+.calculator {
+  @apply h-full pt-[28px] pb-[31px] px-[24px] font-spartan xl:flex xl:items-center;
+
+  .container {
+    @apply flex flex-col gap-[32px] max-w-[540px] xl:w-[540px];
+    margin: 0 auto;
+
+    .header {
+      @apply flex justify-between items-center;
+
+      h1 {
+        @apply text-[32px] tracking-[-0.53px] leading-[36px];
+      }
+
+      .theme {
+        @apply flex items-end gap-[21px];
+
+        p {
+          @apply text-[12px] tracking-[1px] leading-[13px];
+        }
+
+        .selector {
+          @apply flex flex-col gap-[5px];
+
+          .numbersContainer {
+            @apply flex justify-center gap-[11px];
+
+            .number {
+              @apply text-[12px] leading-[13px];
+            }
+          }
+
+          .selectorbg {
+            @apply flex gap-[7px] p-[5px] rounded-[13px];
+
+            input {
+              @apply hidden absolute;
+            }
+
+            label {
+              .circle {
+                @apply w-4 h-4 rounded-full hover:cursor-pointer;
+              }
+            }
+
+            input:checked + label .circle.dark {
+              @apply bg-TH1slider hover:bg-[#F96B5B];
+            }
+
+            input:checked + label .circle.light {
+              @apply bg-TH2slider hover:bg-[#FF8A38];
+            }
+
+            input:checked + label .circle.neon {
+              @apply bg-TH3slider hover:bg-[#93FFF8];
+            }
+          }
+
+          .selectorbg.dark {
+            @apply bg-TH1sliderbg;
+          }
+
+          .selectorbg.light {
+            @apply bg-TH2sliderbg;
+          }
+
+          .selectorbg.neon {
+            @apply bg-TH3sliderbg;
+          }
+        }
+      }
+    }
+
+    .header.dark {
+      @apply text-white;
+    }
+
+    .header.light {
+      @apply text-TH2text;
+    }
+
+    .header.neon {
+      @apply text-TH3text;
+    }
+
+    .content {
+      @apply flex flex-col gap-[24px];
+
+      .display {
+        @apply py-[26px] px-[24px] xl:py-[37px] xl:px-[32px] rounded-[10px];
+
+        .displayNum {
+          @apply text-[32px] xl:text-[48px] tracking-[-0.53px] leading-[36px] xl:leading-[54px] text-right overflow-hidden h-[36px] xl:h-[54px];
+        }
+      }
+
+      .display.dark {
+        @apply bg-TH1displaybg text-white;
+      }
+
+      .display.light {
+        @apply bg-TH2displaybg text-TH2text;
+      }
+
+      .display.neon {
+        @apply bg-TH3displaybg text-TH3text;
+      }
+
+      .buttonsbg {
+        @apply p-[24px] rounded-[10px];
+
+        .buttons {
+          @apply flex flex-col gap-[13px] xl:gap-[24px];
+
+          .small {
+            @apply grid grid-rows-4 grid-cols-4 gap-[13px] xl:gap-[24px];
+
+            .shadow {
+              @apply rounded-[5px] xl:rounded-[10px] pb-[4px];
+
+              .button {
+                @apply rounded-[5px] xl:rounded-[10px] p-[10px] xl:px-[13.5px] xl:py-[10px] flex justify-center;
+
+                p {
+                  @apply text-[28px] xl:text-[32px] leading-[40px];
+                }
+              }
+            }
+
+            .shadow.dark {
+              @apply bg-TH1buttonsh;
+
+              .button {
+                @apply bg-TH1buttonbg hover:bg-[#FFFFFE];
+              }
+            }
+
+            .shadow.light {
+              @apply bg-TH2buttonsh;
+
+              .button {
+                @apply bg-TH2buttonbg hover:bg-white;
+              }
+            }
+
+            .shadow.neon {
+              @apply bg-TH3buttonsh;
+
+              .button {
+                @apply bg-TH3buttonbg hover:bg-[#6C34AC];
+              }
+            }
+
+            .shadow.del {
+              .button {
+                p {
+                  @apply text-base xl:text-[20px] leading-[40px] text-white tracking-[-0.27px];
+                }
+              }
+            }
+
+            .shadow.del.dark {
+              @apply bg-TH1utilitysh;
+
+              .button {
+                @apply bg-TH1utilitybg hover:bg-[#A2B2E1];
+              }
+            }
+
+            .shadow.del.light {
+              @apply bg-TH2utilitysh;
+
+              .button {
+                @apply bg-TH2utilitybg hover:bg-[#62B5BC];
+              }
+            }
+
+            .shadow.del.neon {
+              @apply bg-TH3utilitysh;
+
+              .button {
+                @apply bg-TH3utilitybg hover:bg-[#8631AF];
+              }
+            }
+          }
+
+          .small.dark {
+            @apply text-TH1buttonText;
+          }
+
+          .small.light {
+            @apply text-TH2text;
+          }
+
+          .small.neon {
+            @apply text-TH3text;
+          }
+
+          .big {
+            @apply grid grid-cols-2 gap-[13px] xl:gap-[24px] text-base xl:text-[20px];
+
+            .shadow {
+              @apply rounded-[5px] xl:rounded-[10px] pb-[4px] text-white;
+
+              .button {
+                @apply pt-[9px] pb-[11px] px-[22px] rounded-[5px] xl:rounded-[10px];
+
+                p {
+                  @apply leading-[40px];
+                }
+              }
+            }
+
+            .shadow.reset.dark {
+              @apply bg-TH1utilitysh;
+
+              .button {
+                @apply bg-TH1utilitybg hover:bg-[#A2B2E1];
+              }
+            }
+
+            .shadow.reset.light {
+              @apply bg-TH2utilitysh;
+
+              .button {
+                @apply bg-TH2utilitybg hover:bg-[#62B5BC];
+              }
+            }
+
+            .shadow.reset.neon {
+              @apply bg-TH3utilitysh;
+
+              .button {
+                @apply bg-TH3utilitybg hover:bg-[#8631AF];
+              }
+            }
+
+            .shadow.equal.dark {
+              @apply bg-TH1equalsh;
+
+              .button {
+                @apply bg-TH1slider hover:bg-[#F96B5B];
+              }
+            }
+
+            .shadow.equal.light {
+              @apply bg-TH2equalsh;
+
+              .button {
+                @apply bg-TH2slider hover:bg-[#FF8A38];
+              }
+            }
+
+            .shadow.equal.neon {
+              @apply bg-TH3equalsh text-TH3equaltext;
+
+              .button {
+                @apply bg-TH3slider hover:bg-[#93FFF8];
+              }
+            }
+          }
+        }
+      }
+
+      .buttonsbg.dark {
+        @apply bg-TH1sliderbg;
+      }
+
+      .buttonsbg.light {
+        @apply bg-TH2sliderbg;
+      }
+
+      .buttonsbg.neon {
+        @apply bg-TH3sliderbg;
+      }
+    }
+  }
+}
+
+.calculator.dark {
+  @apply bg-TH1appbg;
+}
+
+.calculator.light {
+  @apply bg-TH2appbg;
+}
+
+.calculator.neon {
+  @apply bg-TH3appbg;
+}
